@@ -1,0 +1,9 @@
+.temp-graph {
+    width: 800px;
+    height: 200px;
+
+}
+
+canvas {
+    border-color: 1px solid black;
+}

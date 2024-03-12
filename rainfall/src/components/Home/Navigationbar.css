@@ -1,0 +1,29 @@
+.navigation {
+    align-items: center;
+    height: 90px;
+    display: flex;
+    gap: 350px;
+    padding: 0px 110px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    width: auto;
+
+}
+
+.navigation ul {
+    display: inline-flex;
+    list-style: none;
+    margin-top: 40px;
+    gap: 200px;
+
+}
+
+.navigation a {
+    text-decoration: none;
+    color: none;
+
+}
+
+.navigation a:hover {
+    text-decoration: underline;
+    color: rebeccapurple;
+}

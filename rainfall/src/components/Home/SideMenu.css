@@ -1,0 +1,39 @@
+.side-menus {
+    display: flex;
+    margin-top: 60px;
+    gap: 20px;
+    width: 750px;
+}
+
+
+.sub-menu {
+    display: block;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    width: 20%;
+    height: 20%;
+    border-radius: 10px;
+
+}
+
+svg {
+    width: 120px;
+    height: 60px;
+    margin-top: 10px;
+}
+
+.sub-menu:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    background-color: rebeccapurple;
+}
+
+.state:hover {
+    background-color: rebeccapurple;
+}
+
+.state {
+    width: 60px;
+    height: 40px;
+    margin-left: 20px;
+    background: rebeccapurple;
+}

@@ -1,0 +1,68 @@
+.left-contents {
+    display: flex;
+    width: 100%;
+    height: 60%;
+    padding: 20px 20px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+        rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+    ;
+
+}
+
+.left-contents:hover {
+    transform: scale(1.1);
+}
+
+.icons {
+    display: block;
+    gap: 20px;
+
+
+}
+
+.cloud {
+    height: 120px;
+    margin-top: 20px;
+    margin-left: 40px;
+}
+
+
+.icons h1 {
+    margin-left: 60px;
+}
+
+.icons h4 {
+    margin-top: 2rem;
+    display: inline-flex;
+    color: gray;
+
+}
+
+.icons h5 {
+    display: inline-flex;
+    margin-left: 4em;
+}
+
+
+.temperature {
+    display: inline-flex;
+    /* margin-left: 2rem; */
+    padding: 2.5rem 0;
+
+}
+
+.temperature sup {
+    font-style: bolder;
+    font-weight: 1000;
+}
+
+.supscript {
+    margin-top: 0.3rem;
+}
+
+.cloud-icon {
+    width: 200px;
+    height: 150px;
+    padding: 20px 0px;
+    margin-top: 10px;
+}

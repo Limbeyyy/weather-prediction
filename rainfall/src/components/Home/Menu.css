@@ -1,0 +1,28 @@
+.inner-container {
+    display: flex;
+    padding: 50px 0px;
+    margin-left: 50px;
+    gap: 200px;
+
+}
+
+.inner-container h4 {
+    margin-top: 0.3rem;
+    margin-left: 1.4em;
+}
+
+.selection-bar {
+    display: block;
+
+}
+
+.mid-contents {
+    display: flex;
+    margin-bottom: 20px;
+    gap: 10px;
+
+}
+
+.right-contents {
+    display: block;
+}
