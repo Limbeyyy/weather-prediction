@@ -1,8 +1,17 @@
 import random
+from pydantic import BaseModel
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 from model_training import load_model, data_processing
 
 server = FastAPI()
+server.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 _, x, _, y = data_processing()
 
 models = {
@@ -13,6 +22,33 @@ models = {
     "CatBoost": "catboost_model",
     "XGBoost": "xgboost_model",
 }
+
+class InputVector(BaseModel):
+    MinTemp: float
+    MaxTemp: float
+    Rainfall: float
+    Evaporation: float
+    Sunshine: float
+    WindGustDir: float
+    WindGustSpeed: float
+    WindDir9am: float
+    WindDir3pm: float
+    WindSpeed9am: float
+    WindSpeed3pm: float
+    Humidity9am: float
+    Humidity3pm: float
+    Pressure9am: float
+    Pressure3pm: float
+    Cloud9am: float
+    Cloud3pm: float
+    Temp9am: float
+    Temp3pm: float
+
+class PredictionType(BaseModel):
+    prediction: bool
+    target: bool
+    input: InputVector
+    idx: int
 
 
 @server.get("/models/")
@@ -29,27 +65,17 @@ def avialable_models():
     return { "models_list": models_list }
 
 
-@server.get("/predict/")
+@server.get("/predict/", response_model=PredictionType)
 def make_prediction(model: str = "Random Forest Classifier"):
     model = load_model(filename=models[model])
     random_idx = random.randint(0, len(x) - 1)
-    print(f"{random_idx = }")
-    print(f"{type(random_idx) = }")
-
     input = x[random_idx]
-    print(f"{input = }")
-    print(f"{type(input) = }")
-    print(f"{input.shape = }")
-
     target = y[random_idx]
-    print(f"{target = }")
-    print(f"{type(target) = }")
-    print(f"{target.shape = }")
     prediction = model.predict(input.reshape(1, -1))
-    # return prediction, target, input
+
     return {
-        "prediction" : prediction.item(),
-        "target": target.item(),
-        "input": input.tolist(),
+        "prediction" : True if prediction.item() else False,
+        "target": True if target.item() else False,
+        "input": InputVector( **{ attr: val for attr, val in zip(InputVector.__fields__.keys(), input.tolist()) } ),
         "idx": random_idx
     }

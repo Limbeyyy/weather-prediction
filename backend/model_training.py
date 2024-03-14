@@ -24,7 +24,7 @@ def save_model(model, filename):
 
 
 def load_model(filename):
-    with open(os.path("models", filename), 'rb') as file:
+    with open(os.path.join("models", filename), 'rb') as file:
         model = pickle.load(file)
     return model
 

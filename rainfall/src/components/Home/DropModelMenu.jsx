@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import "./DropModelMenu.css"
 
 
-function DropdownModelMenu() {
-    const [selectedOption, setSelectedOption] = useState('');
+function DropdownModelMenu({ onSelect }) {
+  const [selectedOption, setSelectedOption] = useState('');
 
-    // Function to handle selection change
-    const handleSelectionChange = (event) => {
-        setSelectedOption(event.target.value);
-    };
+  // Function to handle selection change
+  const handleSelectionChange = (event) => {
+    const val = event.target.value
+    setSelectedOption(val)
+    onSelect(val)
+  };
 
-    return (
-        <div>
-            <select value={selectedOption} onChange={handleSelectionChange} className='model-dropmenu'>
-                <option value="">Choose a Model</option>
-                <option value="option1">Logistic Regression</option>
-                <option value="option2">Decision Tree</option>
-                <option value="option3">Random Forest</option>
-                <option value="option4">XGBoost</option>
-                <option value="option5">CatBoost</option>
-            </select>
-        </div>
-    );
+  return (
+    <div>
+      <select value={selectedOption} onChange={handleSelectionChange} className='model-dropmenu'>
+        <option value="Random Forest Classifier">Random Forest</option>
+        <option value="Logistic Regression">Logistic Regression</option>
+        <option value="Decision Tree Classifier">Decision Tree</option>
+        <option value="Multi Layer Perceptron">MLP</option>
+        <option value="CatBoost">CatBoost</option>
+        <option value="XGBoost">XGBoost</option>
+      </select>
+    </div>
+  );
 }
 
 export default DropdownModelMenu;
