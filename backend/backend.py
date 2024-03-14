@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from model_training import load_model, data_processing
 from typing import List, Dict
 
+
 Features = namedtuple("Features", [
     "MinTemp",
     "MaxTemp",
@@ -27,8 +28,10 @@ Features = namedtuple("Features", [
     "RainTommorow",
 ])
 
+
 server = FastAPI()
 _, x, _, y = data_processing()
+
 
 models = {
     "Logistic Regression": "logistic_model",
@@ -52,34 +55,6 @@ def avialable_models():
     ]
 
     return { "models_list": models_list }
-
-def generate_sample_features(num_samples: int) -> List[Dict[str, str]]:
-    sample_features = []
-    for i in range(num_samples):
-        sample = {
-            "MinTemp",
-            "MaxTemp",
-            "Rainfall",
-            "Evaporation",
-            "Sunshine",
-            "WindGustDir",
-            "WindGustSpeed",
-            "WindDir9am",
-            "WindDir3pm",
-            "WindSpeed9am",
-            "WindSpeed3pm",
-            "Humidity9am",
-            "Humidity3pm",
-            "Pressure9am",
-            "Pressure3pm",
-            "Cloud9am",
-            "Cloud3pm",
-            "Temp9am",
-            "Temp3pm",
-            "RainTommorow",
-        }
-        sample_features.append(sample)
-    return sample_features
 
 
 @server.get("/predict/")
@@ -106,10 +81,3 @@ def make_prediction(model: str = "Random Forest Classifier"):
         "input": Features(*input.tolist()),
         "idx": random_idx
     }
-
-
-@server.get("/sample-features/")
-async def get_sample_features():
-    return generate_sample_features(num_samples=20)
-
-

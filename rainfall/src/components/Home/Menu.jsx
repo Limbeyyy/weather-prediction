@@ -1,13 +1,20 @@
 import './Menu.css'
 import DropdownMenu from '../../components/Home/DropdownMenu'
 import Content from '../../components/Home/Content'
-import React from 'react'
 import PlotGraph from '../../components/Home/PlotGraph'
 import { SideMenu } from '../../components/Home/SideMenu'
 import DropdownModelMenu from './DropModelMenu'
+import { useState } from 'react'
 
 
 function Menu() {
+  const [rainfall, setRainfall] = useState(null)
+  const [inputSample, setInputSample] = useState([])
+  const [target, setTarget] = useState(null)
+
+  async function get_prediction() {
+    const res = await fetch("http://localhost:8000/predict/")
+  }
 
     return (
         <div className='inner-container'>

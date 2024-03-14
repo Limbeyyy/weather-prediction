@@ -227,49 +227,49 @@ def main():
     save_model(model, "xgboost_model")
     print("Saved xgboost")
 
-        # model comparision
-    accuracy_scores = [accuracy_lr, accuracy_dt, accuracy_rf, accuracy_lgb, accuracy_cb, accuracy_xgb]
-    roc_auc_scores = [roc_auc_lr, roc_auc_dt, roc_auc_rf, roc_auc_lgb, roc_auc_cb, roc_auc_xgb]
-    coh_kap_scores = [coh_kap_lr, coh_kap_dt, coh_kap_rf, coh_kap_lgb, coh_kap_cb, coh_kap_xgb]
-    tt = [tt_lr, tt_dt, tt_rf, tt_lgb, tt_cb, tt_xgb]
-
-    model_data = {'Model': ['Logistic Regression','Decision Tree','Random Forest','LightGBM','Catboost','XGBoost'],
-                'Accuracy': accuracy_scores,
-                'ROC_AUC': roc_auc_scores,
-                'Cohen_Kappa': coh_kap_scores,
-                'Time taken': tt}
-    data = pd.DataFrame(model_data)
-
-    fig, ax1 = plt.subplots(figsize=(12,10))
-    ax1.set_title('Model Comparison: Accuracy and Time taken for execution', fontsize=13)
-    color = 'tab:green'
-    ax1.set_xlabel('Model', fontsize=13)
-    ax1.set_ylabel('Time taken', fontsize=13, color=color)
-    ax2 = sns.barplot(x='Model', y='Time taken', data = data, palette='summer')
-    ax1.tick_params(axis='y')
-    ax2 = ax1.twinx()
-    color = 'tab:red'
-    ax2.set_ylabel('Accuracy', fontsize=13, color=color)
-    ax2 = sns.lineplot(x='Model', y='Accuracy', data = data, sort=False, color=color)
-    ax2.tick_params(axis='y', color=color)
-
-
-    fig, ax3 = plt.subplots(figsize=(12,10))
-    ax3.set_title('Model Comparison: Area under ROC and Cohens Kappa', fontsize=13)
-    color = 'tab:blue'
-    ax3.set_xlabel('Model', fontsize=13)
-    ax3.set_ylabel('ROC_AUC', fontsize=13, color=color)
-    ax4 = sns.barplot(x='Model', y='ROC_AUC', data = data, palette='winter')
-    ax3.tick_params(axis='y')
-    ax4 = ax3.twinx()
-    color = 'tab:red'
-    ax4.set_ylabel('Cohen_Kappa', fontsize=13, color=color)
-    ax4 = sns.lineplot(x='Model', y='Cohen_Kappa', data = data, sort=False, color=color)
-    ax4.tick_params(axis='y', color=color)
-    plt.show()
-
-
-    pass
+    #     # model comparision
+    # accuracy_scores = [accuracy_lr, accuracy_dt, accuracy_rf, accuracy_lgb, accuracy_cb, accuracy_xgb]
+    # roc_auc_scores = [roc_auc_lr, roc_auc_dt, roc_auc_rf, roc_auc_lgb, roc_auc_cb, roc_auc_xgb]
+    # coh_kap_scores = [coh_kap_lr, coh_kap_dt, coh_kap_rf, coh_kap_lgb, coh_kap_cb, coh_kap_xgb]
+    # tt = [tt_lr, tt_dt, tt_rf, tt_lgb, tt_cb, tt_xgb]
+    #
+    # model_data = {'Model': ['Logistic Regression','Decision Tree','Random Forest','LightGBM','Catboost','XGBoost'],
+    #             'Accuracy': accuracy_scores,
+    #             'ROC_AUC': roc_auc_scores,
+    #             'Cohen_Kappa': coh_kap_scores,
+    #             'Time taken': tt}
+    # data = pd.DataFrame(model_data)
+    #
+    # fig, ax1 = plt.subplots(figsize=(12,10))
+    # ax1.set_title('Model Comparison: Accuracy and Time taken for execution', fontsize=13)
+    # color = 'tab:green'
+    # ax1.set_xlabel('Model', fontsize=13)
+    # ax1.set_ylabel('Time taken', fontsize=13, color=color)
+    # ax2 = sns.barplot(x='Model', y='Time taken', data = data, palette='summer')
+    # ax1.tick_params(axis='y')
+    # ax2 = ax1.twinx()
+    # color = 'tab:red'
+    # ax2.set_ylabel('Accuracy', fontsize=13, color=color)
+    # ax2 = sns.lineplot(x='Model', y='Accuracy', data = data, sort=False, color=color)
+    # ax2.tick_params(axis='y', color=color)
+    #
+    #
+    # fig, ax3 = plt.subplots(figsize=(12,10))
+    # ax3.set_title('Model Comparison: Area under ROC and Cohens Kappa', fontsize=13)
+    # color = 'tab:blue'
+    # ax3.set_xlabel('Model', fontsize=13)
+    # ax3.set_ylabel('ROC_AUC', fontsize=13, color=color)
+    # ax4 = sns.barplot(x='Model', y='ROC_AUC', data = data, palette='winter')
+    # ax3.tick_params(axis='y')
+    # ax4 = ax3.twinx()
+    # color = 'tab:red'
+    # ax4.set_ylabel('Cohen_Kappa', fontsize=13, color=color)
+    # ax4 = sns.lineplot(x='Model', y='Cohen_Kappa', data = data, sort=False, color=color)
+    # ax4.tick_params(axis='y', color=color)
+    # plt.show()
+    #
+    #
+    # pass
 
 
 if __name__ == "__main__":
