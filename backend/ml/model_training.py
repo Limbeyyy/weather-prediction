@@ -1,7 +1,5 @@
-import pickle
 import time
 import warnings
-import os
 import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.utils import resample
@@ -12,21 +10,11 @@ from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, roc_auc_score, cohen_kappa_score, roc_curve, classification_report
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
+from .presistence_manager import save_model
 
 
 seed: int = 9821
 warnings.filterwarnings("ignore")
-
-
-def save_model(model, filename):
-    with open(filename, 'wb') as file:
-        pickle.dump(model, file)
-
-
-def load_model(filename):
-    with open(os.path.join("models", filename), 'rb') as file:
-        model = pickle.load(file)
-    return model
 
 
 def plot_roc_cur(fper, tper):  
@@ -273,4 +261,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # main()
+    pass
