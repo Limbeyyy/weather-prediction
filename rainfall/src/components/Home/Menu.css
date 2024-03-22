@@ -1,14 +1,14 @@
 .inner-container {
     display: flex;
-    padding: 50px 0px;
+    padding-top: 50px;
     margin-left: 50px;
-    gap: 200px;
+    gap: 100px;
 
 }
 
-.inner-container h4 {
+.inner-container h5 {
     margin-top: 0.3rem;
-    margin-left: 1.4em;
+    margin-left: 4em;
 }
 
 .selection-bar {

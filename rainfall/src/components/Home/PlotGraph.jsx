@@ -12,7 +12,7 @@ const LineGraph = () => {
         datasets: [
             {
                 label: "Temperature",
-                data: [65, 59, 80, 81, 56, 55, 40], // Example data points Enter API
+                data: [65, 59, 80, 81, 56, 55, 40],
                 fill: true,
                 borderWidth: 1,
                 borderColor: 'rgb(75, 192, 192)',

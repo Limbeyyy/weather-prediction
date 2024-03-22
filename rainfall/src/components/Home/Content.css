@@ -1,7 +1,7 @@
 .left-contents {
     display: flex;
     width: 100%;
-    height: 60%;
+    height: 100%;
     padding: 20px 20px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
         rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
@@ -36,6 +36,7 @@
     display: inline-flex;
     color: gray;
 
+
 }
 
 .icons h5 {
@@ -65,4 +66,13 @@
     height: 150px;
     padding: 20px 0px;
     margin-top: 10px;
+}
+
+.trans {
+    padding-left: 30px;
+    gap: 20px;
+}
+
+.one {
+    margin-left: 20px;
 }

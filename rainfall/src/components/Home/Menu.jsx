@@ -1,7 +1,7 @@
 import './Menu.css'
 import DropdownMenu from '../../components/Home/DropdownMenu'
 import Content from '../../components/Home/Content'
-import PlotGraph from '../../components/Home/PlotGraph'
+// import PlotGraph from '../../components/Home/PlotGraph'
 import { SideMenu } from '../../components/Home/SideMenu'
 import { useState } from 'react'
 import DropdownModelMenu from './DropModelMenu'
@@ -51,33 +51,32 @@ function Menu() {
       <div className='inner-container'>
         <div className='selection-bar'>
           <div className='mid-contents'>
-            <h4>Your City</h4>
+            <h5>Your City</h5>
             <DropdownMenu />
           </div>
 
           <div className='mid-contents'>
-            <h4>Models</h4>
-            <DropdownModelMenu onSelect={setModel}/>
+            <h5>Models</h5>
+            <DropdownModelMenu onSelect={setModel} />
+          </div>
+          <div style={ContainerStyle}>
+            <h4>Target: {target !== null ? (target ? "Yes" : "No") : "Null"}</h4>
+          </div>
+          <div style={ContainerStyle}>
+            <h4>Input Vectors: </h4>
+            <div style={InputVectorStyle}>
+              {displayResult()}
+            </div>
           </div>
 
-          <Content onClick={handleClick} prediction={prediction} />
         </div>
 
         <div className='right-contents'>
-          <PlotGraph />
-          <SideMenu />
+          <Content onClick={handleClick} prediction={prediction} />
         </div>
       </div>
 
-      <div style={ContainerStyle}>
-        <h4>Target: {target === null ? "None" : target.toString()}</h4>
-      </div>
-      <div style={ContainerStyle}>
-        <h4>InputVector: </h4>
-        <div style={InputVectorStyle}>
-          {displayResult()}
-        </div>
-      </div>
+
     </div>
   )
 }
@@ -91,13 +90,14 @@ const InputVectorStyle = {
   flexWrap: "none",
   overflowX: "auto",
   overflowY: "none",
-  width: "70vw",
+  width: "45vw",
   padding: "5px",
   backgroundColor: "#eee",
 }
 
 const ContainerStyle = {
   padding: "15px 50px",
+  marginBottom: "30px",
 }
 
 const VectorItemStyle = {

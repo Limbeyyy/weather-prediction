@@ -1,0 +1,10 @@
+.pictures {
+    display: flex;
+    gap: 120px;
+    padding: 30px 20px;
+}
+
+.picture {
+    width: 550px;
+    height: 400px;
+}

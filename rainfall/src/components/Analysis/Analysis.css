@@ -1,0 +1,11 @@
+.image-list {
+    display: flex;
+    gap: 20px;
+    width: 200px;
+    height: 300px;
+
+}
+
+.model-images {
+    padding: 20px 0;
+}

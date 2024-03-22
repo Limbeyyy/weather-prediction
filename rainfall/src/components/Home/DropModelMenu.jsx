@@ -12,6 +12,10 @@ function DropdownModelMenu({ onSelect }) {
     onSelect(val)
   };
 
+  const getSelectedOption = () => {
+    return selectedOption;
+  };
+
   return (
     <div>
       <select value={selectedOption} onChange={handleSelectionChange} className='model-dropmenu'>

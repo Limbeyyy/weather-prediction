@@ -1,0 +1,71 @@
+.login {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+svg {
+    width: 20px;
+}
+
+.login-form input {
+    padding: 5px;
+    width: 200px;
+    display: block;
+    margin: 20px 0;
+    border: none;
+    background-color: white;
+    border-radius: 3px;
+    color: black;
+    font-size: 14px;
+    border-color: black;
+    border-bottom: 1px solid black;
+}
+
+
+.login-form textarea {
+    padding: 5px;
+    width: 200px;
+    display: block;
+    margin: 20px 0;
+    border: none;
+    background-color: white;
+    border-radius: 3px;
+    color: black;
+    font-size: 14px;
+    border-color: black;
+    border-bottom: 1px solid black;
+
+}
+
+
+.login-form button {
+    background: #7CB9E8;
+    cursor: pointer;
+    display: block;
+    margin: 20px 80px;
+    width: fit-content;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #262626;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.5s;
+
+}
+
+.login-form button:hover {
+    background: #ff004f;
+}
+
+@media (max-width: 576px) {
+    .containers {
+        max-width: 50%;
+
+    }
+
+
+
+}
