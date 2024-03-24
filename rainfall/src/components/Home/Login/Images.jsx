@@ -1,12 +1,12 @@
 import React from 'react';
-import books from '../Images/books.svg';
+import weather from '../Images/weather.png';
 import "./Images.css"
 
 
 function ImageSection() {
     return (
         <div className='login-images'>
-            <img src={books} alt='wallpaper' />
+            <img src={weather} alt='wallpaper' className='logins' />
         </div>
     );
 }

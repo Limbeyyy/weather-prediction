@@ -38,7 +38,7 @@ const Analysis = ({ selectedOption }) => {
             <h3> Evaluation: {selectedOption}</h3>
             <div className="image-list">
                 {images.map((image, index) => (
-                    <img key={index} src={image} alt={`Image ${index}`} />
+                    <img key={index} src={image} alt={`Image ${index}`} className='images-mul' />
                 ))}
             </div>
         </div>

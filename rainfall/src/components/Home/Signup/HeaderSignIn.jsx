@@ -5,8 +5,8 @@ import "./HeaderSignIn.css"
 
 function HeaderSignIn() {
     return (
-        <div className='signin-headers' >
-            <h1> Get Started</h1>
+        <div >
+            <h1 className='signin-headers' > Get Started</h1>
         </div>
 
     )

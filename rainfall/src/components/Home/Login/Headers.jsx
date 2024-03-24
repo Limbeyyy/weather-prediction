@@ -4,8 +4,8 @@ import "./Headers.css"
 
 function Header() {
     return (
-        <div className='headers'>
-            <h1> Log In</h1>
+        <div >
+            <h1 className='headers'> Log In</h1>
         </div>
     );
 }

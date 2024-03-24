@@ -9,13 +9,14 @@ const Content = ({ onClick, prediction }) => {
                 <div className='cloud'>
                     {prediction ? <FaCloudShowersHeavy /> : <IoSunny />}
                 </div>
-                <h1> {prediction ? "Rainy" : "Sunny"}</h1>
+                <h1 className="results"> {prediction ? "Rainy" : "Sunny"}</h1>
                 <div className="trans">
                     <h4 className="one"> RainFall</h4>
-
+                    <h4 className="one"> Confidence</h4>
                 </div>
                 <div className="result">
                     <h5>{prediction !== null ? (prediction ? "Yes" : "No") : "Null"}</h5>
+                    {/* <h5>{</h5> */}
 
                 </div>
             </div >

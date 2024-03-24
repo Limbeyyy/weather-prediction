@@ -4,7 +4,7 @@ from sqlalchemy.orm import sessionmaker
 
 
 user: str = "root"
-password: str = ""
+password: str = "root"
 host: str = "localhost"
 port: int = 3306
 database_name: str = "weather_prediction"

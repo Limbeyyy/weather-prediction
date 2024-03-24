@@ -10,6 +10,7 @@ body {
 :root {
   --red: #D01C28;
   --gray: #5A5959;
+  width: fit-content;
 }
 
 * {
@@ -21,11 +22,6 @@ body {
   width: fit-content;
   height: fit-content;
 }
-
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 main {
@@ -53,34 +49,34 @@ main {
 
 
 .containers {
-  width: 100%;
+  width: 90%;
   height: fit-content;
-  padding: 70px 150px;
+  padding: 70px 200px;
 
 
 }
 
 .containerss {
-  width: 100%;
+  width: 85%;
   height: fit-content;
   padding: 70px 10px;
 }
 
 .container-border {
   display: flex;
-  gap: 40px;
   padding: 40px 80px;
-  margin-left: 40px;
-  margin-right: 40px;
-  gap: 150px;
+  margin-left: 350px;
+  /* gap: 50px; */
   border: 1px solid #262626;
   border-radius: 10px;
   background: #EDEADE;
   align-items: center;
+
+
 }
 
 .contents {
-  margin: 0px 70px;
+  margin: 0px 50px;
 
 }
 

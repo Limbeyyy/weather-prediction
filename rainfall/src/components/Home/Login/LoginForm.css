@@ -1,12 +1,21 @@
 .login {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+
+
 }
 
 
+.error-message {
+    padding: 5px 5px;
+    background-color: rgb(247, 152, 152);
+    border-radius: 5px;
+    font-size: smaller;
+    color: red;
+}
+
 svg {
-    width: 20px;
+    width: 0px;
 }
 
 .login-form input {
@@ -44,7 +53,8 @@ svg {
     background: #7CB9E8;
     cursor: pointer;
     display: block;
-    margin: 20px 80px;
+    margin: 20px 100px;
+    margin-left: 150px;
     width: fit-content;
     border: 0;
     padding: 10px 20px;

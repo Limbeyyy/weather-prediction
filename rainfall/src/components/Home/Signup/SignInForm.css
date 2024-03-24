@@ -1,12 +1,20 @@
 .signin {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; */
 }
 
+.first {
+    display: block;
+}
+
+.second {
+    display: block;
+}
 
 svg {
-    width: 20px;
+    width: 100px;
+    height: 100px;
 }
 
 
@@ -54,7 +62,7 @@ svg {
     cursor: pointer;
     display: block;
     margin: 20px;
-    margin-left: 50px;
+    margin-left: 150px;
     width: fit-content;
     border: 0;
     padding: 10px 20px;

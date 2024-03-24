@@ -1,11 +1,16 @@
 .image-list {
-    display: flex;
+    display: inline-flex;
     gap: 20px;
-    width: 200px;
-    height: 300px;
+    width: 1400px;
+    height: 480px;
+    overflow: scroll;
 
 }
 
 .model-images {
-    padding: 20px 0;
+    padding: 20px 20px;
+}
+
+.images-mul {
+    display: block;
 }

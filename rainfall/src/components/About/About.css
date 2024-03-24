@@ -1,0 +1,74 @@
+.abouts {
+    padding: 20px 80px;
+    padding-top: 250px;
+    background-image: url("background.avif");
+    width: 100vw;
+    height: 87.5vh;
+    color: white;
+
+}
+
+.abouts h1 {
+    font-weight: bolder;
+    padding-bottom: 20px;
+    font-size: xx-large;
+}
+
+.abouts h2 {
+    padding-bottom: 40px;
+    font-size: x-large;
+}
+
+.abouts p {
+    font-size: larger;
+    color: gainsboro;
+}
+
+
+
+.all {
+    background: url("background.avif");
+}
+
+.services {
+    width: 100vw;
+    height: fit-content;
+    padding: 20px 80px;
+    display: inline-flex;
+    gap: 80px;
+
+
+}
+
+.service {
+    width: fit-content;
+    height: fit-content;
+    padding: 20px 100px;
+    margin-top: 20px;
+    color: white;
+
+}
+
+.services-1 {
+    width: 300px;
+    height: 300px;
+    border-radius: 20px;
+    background-color: rgb(33, 33, 53);
+    padding: 20px 20px;
+
+}
+
+.services :hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+
+.services-1 h2 {
+    padding-bottom: 20px;
+    color: whitesmoke;
+}
+
+.services-1 p {
+    color: white;
+}
