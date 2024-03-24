@@ -17,21 +17,27 @@ const About = () => {
             <h1 className='service'> Our Services</h1>
             <div className='services'>
                 <div className='services-1'>
-
+                    <span className="material-symbols-outlined">
+                        thermostat
+                    </span>
                     <h2> Accurate Forecasts</h2>
                     <p>Stay informed with precise predictions tailored to your location.</p>
                 </div>
                 <div className='services-1'>
+                    <FontAwesomeIcon icon={faUser} className='user' />
                     <h2> Intuitive UI</h2>
-                    <p> Seamlessly navigate through weather data with our user-friendly design.</p>
+                    <p> Seamlessly navigate through weather information with our user-friendly design.</p>
                 </div>
                 <div className="services-1">
-                    <FontAwesomeIcon icon={faBell} />
+                    <FontAwesomeIcon icon={faBell} className='bell' />
                     <h2> Notifications</h2>
                     <p> Receive rainfall forecasts personalized to your specific needs and preferences.</p>
                 </div>
 
                 <div className="services-1">
+                    <span className="material-symbols-outlined">
+                        feed
+                    </span>
                     <h2> Confidence</h2>
                     <p> Helps you make well-informed decisions for your day based on reliable forecasts.</p>
                 </div>

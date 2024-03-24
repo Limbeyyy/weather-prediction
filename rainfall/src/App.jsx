@@ -16,7 +16,7 @@ const App = () => {
       <Navigationbar />
       <Routes>
         <Route path="/" element={<About />} exec />
-        <Route path="/menu" element={<Menu />} exec />
+        <Route path="/menus" element={<Menu />} exec />
         <Route path="/performance" element={<Performance />} />
         <Route path="/analysis" element={<Result />} />
         <Route path="/login" element={<LoginPage />} />

@@ -1,19 +1,25 @@
 .inner-container {
     display: flex;
-    padding-top: 50px;
-    margin-left: 50px;
-    gap: 100px;
+    padding: 0 130px;
+    padding-top: 100px;
+    gap: 200px;
 
 }
 
 .inner-container h5 {
     margin-top: 0.3rem;
     margin-left: 4em;
+    padding: 20px 0;
 }
 
 .selection-bar {
     display: block;
 
+}
+
+
+.target {
+    font-size: xx-large;
 }
 
 .mid-contents {
@@ -25,4 +31,9 @@
 
 .right-contents {
     display: block;
+}
+
+.mid-contents h5 {
+    font-size: larger;
+    padding-right: 20px;
 }

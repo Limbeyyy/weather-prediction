@@ -4,7 +4,7 @@
     background-image: url("background.avif");
     width: 100vw;
     height: 87.5vh;
-    color: white;
+    color: rgb(252, 252, 253);
 
 }
 
@@ -21,7 +21,7 @@
 
 .abouts p {
     font-size: larger;
-    color: gainsboro;
+    color: rgb(219, 213, 213);
 }
 
 
@@ -33,9 +33,9 @@
 .services {
     width: 100vw;
     height: fit-content;
-    padding: 20px 80px;
+    padding: 20px 40px;
     display: inline-flex;
-    gap: 80px;
+    gap: 100px;
 
 
 }
@@ -62,6 +62,32 @@
     cursor: pointer;
     transform: scale(1.1);
 }
+
+.bell {
+    width: 30px;
+    height: 30px;
+    padding: 0 10px;
+}
+
+.user {
+    width: 30px;
+    height: 30px;
+    padding: 0 10px;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 800,
+        'GRAD' 0,
+        'opsz' 24;
+    padding: 0 10px;
+    font-size: 40px;
+
+
+}
+
+
 
 
 .services-1 h2 {

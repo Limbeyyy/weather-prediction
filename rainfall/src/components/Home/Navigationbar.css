@@ -2,10 +2,11 @@
     align-items: center;
     height: 90px;
     display: flex;
-    gap: 600px;
+    gap: 550px;
     padding: 0px 110px;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
     width: auto;
+    background-color: rgb(244, 239, 239);
 
 }
 
@@ -19,11 +20,9 @@
 
 .navigation a {
     text-decoration: none;
-    color: none;
-
+    color: black;
 }
 
 .navigation a:hover {
-    text-decoration: underline;
-    color: rebeccapurple;
+    color: rgb(56, 36, 129);
 }

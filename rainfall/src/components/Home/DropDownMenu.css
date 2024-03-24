@@ -1,5 +1,7 @@
 .custom-dropmenu {
     border: 2px solid gainsboro;
     border-radius: 0;
-    height: 30px;
+    height: 40px;
+    width: 200px;
+    margin-top: 20px;
 }

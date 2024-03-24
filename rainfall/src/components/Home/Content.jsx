@@ -11,8 +11,12 @@ const Content = ({ onClick, prediction }) => {
                 </div>
                 <h1 className="results"> {prediction ? "Rainy" : "Sunny"}</h1>
                 <div className="trans">
-                    <h4 className="one"> RainFall</h4>
-                    <h4 className="one"> Confidence</h4>
+                    <div>
+                        <h4 className="one"> RainFall</h4>
+                    </div>
+                    <div>
+                        <h4 className="one"> Confidence</h4>
+                    </div>
                 </div>
                 <div className="result">
                     <h5>{prediction !== null ? (prediction ? "Yes" : "No") : "Null"}</h5>

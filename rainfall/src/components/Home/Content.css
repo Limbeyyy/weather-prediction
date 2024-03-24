@@ -37,11 +37,14 @@
     color: gray;
 
 
+
 }
 
 .icons h5 {
     display: inline-flex;
     margin-left: 4em;
+    font-size: large;
+    font-weight: bolder;
 }
 
 
@@ -69,10 +72,12 @@
 }
 
 .trans {
+    display: flex;
     padding-left: 30px;
-    gap: 20px;
+    gap: 80px;
 }
 
 .one {
     margin-left: 20px;
+    font-size: larger;
 }

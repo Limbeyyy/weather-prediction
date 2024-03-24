@@ -56,14 +56,14 @@ function Menu() {
           </div>
 
           <div className='mid-contents'>
-            <h5>Models</h5>
+            <h5 style={{ padding: '20px ' }}>Models</h5>
             <DropdownModelMenu onSelect={setModel} />
           </div>
           <div style={ContainerStyle}>
-            <h4>Target: {target !== null ? (target ? "Yes" : "No") : "Null"}</h4>
+            <h4 className='target'>Target: {target !== null ? (target ? "Yes" : "No") : "Null"}</h4>
           </div>
           <div style={ContainerStyle}>
-            <h4>Input Vectors: </h4>
+            <h4 style={{ fontSize: "larger" }}>Input Vectors: </h4>
             <div style={InputVectorStyle}>
               {displayResult()}
             </div>

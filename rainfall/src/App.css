@@ -66,8 +66,6 @@ main {
   display: flex;
   padding: 40px 80px;
   margin-left: 350px;
-  /* gap: 50px; */
-  border: 1px solid #262626;
   border-radius: 10px;
   background: #EDEADE;
   align-items: center;

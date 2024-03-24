@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser, faLock, faCircleExclamation } from '@fortawesome/free-solid-svg-icons';
 import './LoginForm.css';
 import axios from 'axios';
+import Menu from '../Menu';
 
 // Separate component for error message box
 const ErrorBox = ({ message }) => {
@@ -42,7 +43,7 @@ function LoginForm() {
             if (response.status === 200) {
                 const userData = response.data;
                 console.log('User data:', userData);
-                navigate('/');
+                navigate('/menus');
             } else {
                 setErrorMessage('Invalid username or password'); // Set error message for incorrect login
                 setTimeout(() => {
