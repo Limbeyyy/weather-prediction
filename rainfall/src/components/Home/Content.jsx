@@ -4,7 +4,7 @@ import { IoSunny } from "react-icons/io5";
 
 const Content = ({ onClick, prediction }) => {
     return (
-        <div className='left-contents' onClick={onClick}>
+        <button className='left-contents' onClick={onClick}>
             <div className='icons'>
                 <div className='cloud'>
                     {prediction ? <FaCloudShowersHeavy /> : <IoSunny />}
@@ -19,11 +19,11 @@ const Content = ({ onClick, prediction }) => {
                     </div>
                 </div>
                 <div className="result">
-                    <h5>{prediction !== undefined ? (prediction ? "Yes" : "No") : "Null"}</h5>
+                    <h5 className="rainfall">{prediction !== undefined ? (prediction ? "Yes" : "No") : "Null"}</h5>
                     <h5>{prediction !== undefined ? (Math.random() * 30 + 63) + Math.random().toFixed(2) : "Null"}</h5>
                 </div>
             </div >
-        </div>
+        </button>
     )
 }
 

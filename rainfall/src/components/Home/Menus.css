@@ -1,0 +1,48 @@
+.mains {
+    display: flex;
+    padding: 50px 100px;
+    gap: 200px;
+}
+
+.locations {
+    padding-bottom: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.models {
+    padding-bottom: 20px;
+    display: inline-flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.locations h4 {
+    padding-top: 20px;
+}
+
+.models h4 {
+    padding-top: 20px;
+}
+
+.buttons {
+    background: #7CB9E8;
+    cursor: pointer;
+    display: block;
+    margin: 20px 50px;
+    /* margin-left: 150px; */
+    width: fit-content;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 6px;
+    color: #262626;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.5s;
+
+}
+
+.buttons:hover {
+    background: #ff004f;
+}

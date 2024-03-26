@@ -9,6 +9,7 @@ import LoginPage from './components/Home/Login/LoginPage';
 import SignupPage from './components/Home/Signup/SignInPage';
 import About from './components/About/About';
 import Form from './components/Home/Form';
+import Menus from './components/Home/Menus';
 
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<About />} exec />
         <Route path="/menus" element={<Menu />} exec />
+        <Route path="/menuss" element={<Menus />} exec />
         <Route path="/performance" element={<Performance />} />
         <Route path="/analysis" element={<Result />} />
         <Route path="/login" element={<LoginPage />} />
