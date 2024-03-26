@@ -10,7 +10,7 @@ from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, roc_auc_score, cohen_kappa_score, roc_curve, classification_report
 from sklearn.metrics import confusion_matrix, ConfusionMatrixDisplay
-from .presistence_manager import save_model
+from presistence_manager import save_model
 
 
 seed: int = 9821
@@ -79,6 +79,8 @@ def data_processing() -> None:
     oversampled_df["WindDir9am"] = oversampled_df["WindDir9am"].fillna(oversampled_df["WindDir9am"].mode()[0])
     oversampled_df["WindDir3pm"] = oversampled_df["WindDir3pm"].fillna(oversampled_df["WindDir3pm"].mode()[0])
 
+    to_save_df = oversampled_df.copy(deep=True)
+
     # categorical data to numerical data
     for col in oversampled_df.select_dtypes(include=["object"]).columns:
         lencoder = LabelEncoder()
@@ -106,7 +108,7 @@ def data_processing() -> None:
 
     # split data
     x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=0.2, random_state=seed)
-    return x_train, x_test, y_train, y_test
+    return x_train, x_test, y_train, y_test, mice_imputed, to_save_df
 
 
 # x_train, x_test, y_train, y_test = data_processing()

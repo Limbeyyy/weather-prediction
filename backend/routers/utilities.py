@@ -100,8 +100,8 @@ def raw_to_inputs(sample: RawInputVector) -> np.array:
     res = pydantic_to_np(res)
     # print(res)
 
-    import warnings
-    warnings.filterwarnings("ignore")
-    res = imputer.transform(res.reshape(1, -1))
+    # import warnings
+    # warnings.filterwarnings("ignore")
+    # res = imputer.transform(res.reshape(1, -1))
 
     return res
