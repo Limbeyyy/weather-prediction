@@ -12,14 +12,14 @@ import React from 'react'
 import Form from './Form'
 
 
-const MenuForm = () => {
+const MenuForm = ({ model, location }) => {
 
   return (
     <div>
       <div>
         <h1 className='sides'> Know Your Weather</h1>
       </div>
-      <Form />
+      <Form model={model} location={location} />
 
     </div>
   )

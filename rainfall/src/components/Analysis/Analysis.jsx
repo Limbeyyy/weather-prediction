@@ -22,12 +22,12 @@ import "./Analysis.css";
 
 
 const imagesMap = {
-    "Logistic Regression": [lr1, lr2, lr3],
-    "Decision Tree Classifier": [dt1, dt2, dt3],
-    "Multi Layer Perceptron": [nn1, nn2, nn3],
-    "Random Forest Classifier": [rfc1, rfc2, rfc3],
-    "CatBoost": [cat1, cat2, cat3],
-    "XGBoost": [xboost1, xboost2, xboost3]
+    "logistic_model": [lr1, lr2, lr3],
+    "dt_classifier_model": [dt1, dt2, dt3],
+    "mlp_model": [nn1, nn2, nn3],
+    "rf_classifier_model": [rfc1, rfc2, rfc3],
+    "catboost_model": [cat1, cat2, cat3],
+    "xgboost_model": [xboost1, xboost2, xboost3]
 };
 
 const Analysis = ({ selectedOption }) => {

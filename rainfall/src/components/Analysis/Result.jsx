@@ -14,7 +14,7 @@ const Result = () => {
 
     return (
         <div className='analyze'>
-            <DropdownModelMenu onSelect={handleModelSelect} />
+            <DropdownModelMenu setModel={handleModelSelect} />
             <Analysis selectedOption={selectedOption} />
         </div>
     );

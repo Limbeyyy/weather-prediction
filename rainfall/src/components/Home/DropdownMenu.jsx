@@ -2,69 +2,68 @@ import React, { useState } from 'react';
 import "./DropDownMenu.css"
 
 
-function DropdownMenu() {
+function DropdownMenu({ setLocation }) {
     const [selectedOption, setSelectedOption] = useState('');
 
     // Function to handle selection change
     const handleSelectionChange = (event) => {
-        setSelectedOption(event.target.value);
+        const val = event.target.value;
+        setSelectedOption(val);
+        setLocation(val);
     };
 
     return (
         <div>
             <select value={selectedOption} onChange={handleSelectionChange} className='custom-dropmenu'>
                 <option value="">Choose a city</option>
-                <option value="option1">Albury</option>
-                <option value="option2">BadgerysCreek</option>
-                <option value="option3">CoffsHarbour</option>
-                <option value="option4">Moree</option>
-                <option value="option5">Newcastle</option>
-                <option value="option6">NorahHead</option>
-                <option value="option7">NorthfolkIsland</option>
-                <option value="option8">Penrith</option>
-                <option value="option9">Richmond</option>
-                <option value="option10">Sydney</option>
-                <option value="option11">SydneyAirport</option>
-                <option value="option12">WaggaWagga</option>
-                <option value="option13">Williamtown</option>
-                <option value="option14">Wollongong</option>
-                <option value="option15">Canberra</option>
-                <option value="option16">Tuggerangong</option>
-                <option value="option17">MountGinini</option>
-                <option value="option18">Ballarat</option>
-                <option value="option19">Bendigo</option>
-                <option value="option20">Sale</option>
-                <option value="option21">MelbourneAirport</option>
-                <option value="option22">Melbourne</option>
-                <option value="option23">Mildura</option>
-
-                <option value="option24">Nhil</option>
-                <option value="option25">Portland</option>
-                <option value="option26">Watsonia</option>
-
-                <option value="option27">Dartmoor</option>
-                <option value="option28">Brisbane</option>
-                <option value="option29">Cairns</option>
-                <option value="option30">GoldCoast</option>
-
-                <option value="option31">Townsville</option>
-                <option value="option32">Adelaide</option>
-                <option value="option33">MountGambier</option>
-                <option value="option34">Nurioopta</option>
-                <option value="option35">Woomera</option>
-                <option value="option36">Albany</option>
-                <option value="option37">Witchcliffe</option>
-                <option value="option38">PearceRAAF</option>
-                <option value="option39">PearthAirport</option>
-                <option value="option40">Perth</option>
-                <option value="option41">SalmonGums</option>
-                <option value="option42">Walpole</option>
-                <option value="option43">Hobart</option>
-                <option value="option44">Launceston</option>
-                <option value="option45">AliceSprings</option>
-                <option value="option46">Darwin</option>
-                <option value="option47">Katherine</option>
-                <option value="option48">Uluru</option>
+                <option value="Albury">Albury</option>
+                <option value="BadgerysCreek">BadgerysCreek</option>
+                <option value="CoffsHarbour">CoffsHarbour</option>
+                <option value="Moree">Moree</option>
+                <option value="Newcastle">Newcastle</option>
+                <option value="NorahHead">NorahHead</option>
+                <option value="NorthfolkIsland">NorthfolkIsland</option>
+                <option value="Penrith">Penrith</option>
+                <option value="Richmond">Richmond</option>
+                <option value="Sydney">Sydney</option>
+                <option value="SydneyAirport">SydneyAirport</option>
+                <option value="WaggaWagga">WaggaWagga</option>
+                <option value="Williamtown">Williamtown</option>
+                <option value="Wollongong">Wollongong</option>
+                <option value="Canberra">Canberra</option>
+                <option value="Tuggerangong">Tuggerangong</option>
+                <option value="MountGinini">MountGinini</option>
+                <option value="Ballarat">Ballarat</option>
+                <option value="Bendigo">Bendigo</option>
+                <option value="Sale">Sale</option>
+                <option value="MelbourneAirport">MelbourneAirport</option>
+                <option value="Melbourne">Melbourne</option>
+                <option value="Mildura">Mildura</option>
+                <option value="Nhil">Nhil</option>
+                <option value="Portland">Portland</option>
+                <option value="Watsonia">Watsonia</option>
+                <option value="Dartmoor">Dartmoor</option>
+                <option value="Brisbane">Brisbane</option>
+                <option value="Cairns">Cairns</option>
+                <option value="GoldCoast">GoldCoast</option>
+                <option value="Townsville">Townsville</option>
+                <option value="Adelaide">Adelaide</option>
+                <option value="MountGambier">MountGambier</option>
+                <option value="Nurioopta">Nurioopta</option>
+                <option value="Woomera">Woomera</option>
+                <option value="Albany">Albany</option>
+                <option value="Witchcliffe">Witchcliffe</option>
+                <option value="PearceRAAF">PearceRAAF</option>
+                <option value="PearthAirport">PearthAirport</option>
+                <option value="Perth">Perth</option>
+                <option value="SalmonGums">SalmonGums</option>
+                <option value="Walpole">Walpole</option>
+                <option value="Hobart">Hobart</option>
+                <option value="Launceston">Launceston</option>
+                <option value="AliceSprings">AliceSprings</option>
+                <option value="Darwin">Darwin</option>
+                <option value="Katherine">Katherine</option>
+                <option value="Uluru">Uluru</option>
             </select>
         </div>
     );

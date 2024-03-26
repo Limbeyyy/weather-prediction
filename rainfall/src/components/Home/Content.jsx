@@ -2,7 +2,7 @@ import { FaCloudShowersHeavy } from "react-icons/fa6";
 import "./Content.css";
 import { IoSunny } from "react-icons/io5";
 
-const Content = ({ onClick, prediction }) => {
+const Content = ({ onClick, prediction, confidence }) => {
     return (
         <button className='left-contents' onClick={onClick}>
             <div className='icons'>
@@ -20,7 +20,7 @@ const Content = ({ onClick, prediction }) => {
                 </div>
                 <div className="result">
                     <h5 className="rainfall">{prediction !== undefined ? (prediction ? "Yes" : "No") : "Null"}</h5>
-                    <h5>{prediction !== undefined ? (Math.random() * 30 + 63) + Math.random().toFixed(2) : "Null"}</h5>
+                    <h5>{confidence ? confidence : "Null"}</h5>
                 </div>
             </div >
         </button>

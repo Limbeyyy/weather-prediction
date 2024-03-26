@@ -3,12 +3,12 @@ import DropdownMenu from './DropdownMenu'
 import DropdownModelMenu from './DropModelMenu'
 import Content from './Content'
 import "./Menus.css"
-import Form from './Form'
+
 import MenuForm from './MenuForm'
 
 
 
-const Menus = () => {
+const Menus = ({ model, location, setModel, setLocation }) => {
     const [showForm, setShowForm] = useState(false);
 
     const handleOpenForm = () => {
@@ -17,26 +17,24 @@ const Menus = () => {
 
     return (
         <div>
-            {showForm ? (<MenuForm />) :
+            {showForm ? (<MenuForm model={model} location={location} />) :
                 (<div className='mains'>
                     <div className='sub-main'>
                         <div className='locations'>
                             <h4> Select Location </h4>
-                            <DropdownMenu />
+                            <DropdownMenu setLocation={setLocation} />
                         </div>
                         <div className='models'>
                             <h4> Select Models</h4>
-                            <DropdownModelMenu />
+                            <DropdownModelMenu setModel={setModel} />
                         </div>
 
                         <div className='target'>
                             <h1> Target :</h1>
-
                         </div>
 
 
                         <div className='input-vector'>
-
                         </div>
 
                         <div className='form-buttons'>
@@ -44,9 +42,7 @@ const Menus = () => {
                             <button className='buttons' onClick={handleOpenForm}>Open Form</button>
                         </div>
                     </div>
-                    <Content />
                 </div>)}
-
         </div>
     )
 }
