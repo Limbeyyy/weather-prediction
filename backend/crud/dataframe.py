@@ -1,7 +1,7 @@
 import csv
+import random
 from sqlalchemy.orm import Session
 from database.models.dataframe import WeatherData
-from schemas.ml import InputVector
 
 
 def fill_table_with_csv(session: Session, filename: str) -> None:
@@ -31,7 +31,7 @@ def fill_table_with_csv(session: Session, filename: str) -> None:
                 temp_9am = row['Temp9am'],
                 temp_3pm = row['Temp3pm'],
                 rain_today = row['RainToday'],
-                rain_tomorrow = row['RainTomorrow']
+                rain_tomorrow = row['RainTomorrow'],
             )
             session.add(weather_data)
 
@@ -47,3 +47,34 @@ def get_row_by_id(session: Session, id: int) -> WeatherData:
 def length(session: Session) -> int:
     query = session.query(WeatherData).all()
     return len(query)
+
+
+def samples_by_location(session: Session, location: str) -> list[WeatherData]:
+    query = session.query(WeatherData).filter(WeatherData.location == location)
+    db_samples = query.all()
+    if not len(db_samples):
+        db_samples = [WeatherData(
+            location = location,
+            min_temp = random.normalvariate(mu=29, sigma=10),
+            max_temp = random.normalvariate(mu=32, sigma=10),
+            rainfall = random.normalvariate(mu=2.12, sigma=7.13),
+            evaporation = random.normalvariate(mu=2.12, sigma=7.13),
+            sunshine = random.normalvariate(mu=2.12, sigma=7.13),
+            wind_gust_dir = 'N',
+            wind_gust_speed = random.normalvariate(mu=2.12, sigma=7.13),
+            wind_dir_9am = 'NE',
+            wind_dir_3pm = 'SSW',
+            wind_speed_9am = random.normalvariate(mu=2.12, sigma=7.13),
+            wind_speed_3pm = random.normalvariate(mu=2.12, sigma=7.13),
+            humidity_9am = random.normalvariate(mu=2.12, sigma=7.13),
+            humidity_3pm = random.normalvariate(mu=2.12, sigma=7.13),
+            pressure_9am = random.normalvariate(mu=2.12, sigma=7.13),
+            pressure_3pm = random.normalvariate(mu=2.12, sigma=7.13),
+            cloud_9am = random.normalvariate(mu=2.12, sigma=7.13),
+            cloud_3pm = random.normalvariate(mu=2.12, sigma=7.13),
+            temp_9am = random.normalvariate(mu=2.12, sigma=7.13),
+            temp_3pm = random.normalvariate(mu=2.12, sigma=7.13),
+            rain_today = 'No',
+            rain_tomorrow = 'No',
+        )]
+    return db_samples
