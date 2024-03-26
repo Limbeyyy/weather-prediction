@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import Content from './Content';
+import axios from 'axios';
 import "./Form.css";
 
 const Form = () => {
-
-    const [location, setLocation] = useState('');
+    const [location, setLocation] = useState('')
     const [minTemp, setMinTemp] = useState('');
     const [maxTemp, setMaxTemp] = useState('');
     const [rainfall, setRainfall] = useState('');
@@ -25,6 +25,48 @@ const Form = () => {
     const [temperature9am, setTemperature9am] = useState('');
     const [temperature3pm, setTemperature3pm] = useState('');
     const [rainToday, setRainToday] = useState('');
+    const [result, setResult] = useState({})
+
+    const getInference = async () => {
+        try {
+            const response = await axios.post('http://localhost:8000/predict/?model=xgboost_model', null, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `${localStorage.getItem('token_type')} ${localStorage.getItem('access_token')}`,
+                },
+            });
+
+            if (response.status === 200) {
+                setResult(response.data);
+                setLocation(response.data.inputs.Location)
+                setMinTemp(response.data.inputs.MinTemp)
+                setMaxTemp(response.data.inputs.MaxTemp)
+                setRainfall(response.data.inputs.Rainfall)
+                setEvaporation(response.data.inputs.Evaporation)
+                setSunshine(response.data.inputs.Sunshine)
+                setWindGustDir(response.data.inputs.WindGustDir)
+                setWindGustSpeed(response.data.inputs.WindGustSpeed)
+                setWindDir9am(response.data.inputs.WindDir9am)
+                setWindDir3pm(response.data.inputs.WindDir3pm)
+                setWindSpeed9am(response.data.inputs.WindSpeed9am)
+                setWindSpeed3pm(response.data.inputs.WindSpeed3pm)
+                setHumidity9am(response.data.inputs.Humidity9am)
+                setHumidity3pm(response.data.inputs.Humidity3pm)
+                setPressure9am(response.data.inputs.Pressure9am)
+                setPressure3pm(response.data.inputs.Pressure3pm)
+                setTemperature9am(response.data.inputs.Temp9am)
+                setTemperature3pm(response.data.inputs.Temp3pm)
+                setCloud9am(response.data.inputs.Cloud9am)
+                setCloud3pm(response.data.inputs.Cloud3pm)
+                setRainToday(response.data.inputs.RainToday)
+                console.log(response.data)
+            } else {
+                console.error('server responded with status: ', response.status)
+            }
+        } catch (error) {
+            console.error('Error during prediction:', error);
+        }
+    }
 
     return (
         <div>
@@ -120,18 +162,14 @@ const Form = () => {
                                 <input type='text' placeholder='Temperature 3pm' className='field' value={temperature3pm} onChange={(e) => setTemperature3pm(e.target.value)} />
                             </div>
                         </div>
-                        <div className='forms-1'>
-                            <div className='forms'>
-                                <h4> Rain Today</h4>
-                                <input type='text' placeholder='Rain Today' className='field' value={rainToday} onChange={(e) => setRainToday(e.target.value)} />
-                            </div>
-                            <Content />
-                        </div>
-
                     </div>
                 </form>
                 <div>
-
+                    <div className='forms-1'>
+                        <h4> Rain Today</h4>
+                        <input type='text' placeholder='Rain Today' className='field' value={rainToday} onChange={(e) => setRainToday(e.target.value)} />
+                    </div>
+                    <Content onClick={getInference} prediction={result.prediction} />
                 </div>
             </div >
         </div >
@@ -139,4 +177,3 @@ const Form = () => {
 };
 
 export default Form;
-

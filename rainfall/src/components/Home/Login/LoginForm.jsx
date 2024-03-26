@@ -42,7 +42,8 @@ function LoginForm() {
 
             if (response.status === 200) {
                 const userData = response.data;
-                console.log('User data:', userData);
+                localStorage.setItem("token_type", userData.token_type)
+                localStorage.setItem("access_token", userData.access_token)
                 navigate('/menus');
             } else {
                 setErrorMessage('Invalid username or password'); // Set error message for incorrect login

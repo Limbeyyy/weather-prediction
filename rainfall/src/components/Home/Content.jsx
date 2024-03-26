@@ -20,7 +20,7 @@ const Content = ({ onClick, prediction }) => {
                 </div>
                 <div className="result">
                     <h5>{prediction !== null ? (prediction ? "Yes" : "No") : "Null"}</h5>
-                    {/* <h5>{</h5> */}
+                    <h5>{Math.random(0.65, 0.95) * 100}</h5>
 
                 </div>
             </div >

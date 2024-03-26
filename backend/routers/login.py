@@ -22,7 +22,7 @@ async def login(
         OAuth2PasswordRequestForm,
         Depends()
     ],
-):
+) -> Token:
     user = authenticate_user(form_data.username, form_data.password)
     if not user:
         raise HTTPException(
