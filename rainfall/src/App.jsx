@@ -8,6 +8,7 @@ import Result from './components/Analysis/Result';
 import LoginPage from './components/Home/Login/LoginPage';
 import SignupPage from './components/Home/Signup/SignInPage';
 import About from './components/About/About';
+import Form from './components/Home/Form';
 
 
 const App = () => {
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/performance" element={<Performance />} />
         <Route path="/analysis" element={<Result />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/form" element={<Form />}></Route>
         <Route path="/signup" element={<SignupPage />} />
 
       </Routes>
